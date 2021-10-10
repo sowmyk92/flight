@@ -1,8 +1,8 @@
-## Aim : To generate data frames similar to data warehouse for analysis
+# Aim : To generate data frames similar to data warehouse for analysis
 
 ### Data : Netflix data related to movies and series. It has 11697 rows and 31 columns. 
 
-Columns: 
+### Columns: 
 
 ['movie_id', 'index', 'title', 'genre', 'tags', 'languages',
        'Movie_Series', 'hidden_gem_score', 'country_available', 'runtime',
@@ -13,11 +13,11 @@ Columns:
        'summary', 'imdb_votes', 'image', 'poster', 'tmdb_trailer',
        'trailer_site']
       
-  Create movie related data:
+  ### Create movie related data:
   
   ![image](https://user-images.githubusercontent.com/67071872/136695938-322ec59c-c6f8-4299-9ace-ee57d4ec4685.png)
 
-Data frames created:
+## Data frames created:
 ## movies_df : Contains quantitative information about a given movie. 
 
 'movie_id', 'title', 'Movie_Series', 'runtime', 'view_rating',
@@ -25,7 +25,7 @@ Data frames created:
        'awards_received', 'release_date', 'release_year', 'release_qtr',
        'netflix_relase_date', 'netflix_release_yr', 'netflix_release_qtr'
        
- movie_id - Is a unique value to indetify each title 
+ **movie_id - Is a unique value to indetify each title**
  
  ## genre_df: Contains a genre_flag for each title. 
  
@@ -37,7 +37,7 @@ Data frames created:
        
 Flag Values are : ['Y','N']
 
-Sample data:
+### Sample data:
 
 ![image](https://user-images.githubusercontent.com/67071872/136696251-c278c118-9edd-4dcf-a8e5-ae833c461d61.png)
 

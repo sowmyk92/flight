@@ -1,3 +1,4 @@
+import os
 import http.client
 import json
 import pandas as pd
@@ -7,11 +8,23 @@ from dataload import create_connection,load_data,trunc_table
 
 ## Connect to the API to fetch data
 conn = http.client.HTTPSConnection("skyscanner-skyscanner-flight-search-v1.p.rapidapi.com")
+
+with open("apicred.txt",'r') as f:
+    apicred = f.readlines()
+
+    for line in apicred:
+        val=line.replace("\n","").split("=")
+        if 'host' in val :
+            host = val[1]
+        if 'apikey' in val:
+            apikey=val[1]
+
 headers = {
-    'x-rapidapi-host': "skyscanner-skyscanner-flight-search-v1.p.rapidapi.com",
-    'x-rapidapi-key': "7692c74fc6mshf16a988f8f40fa2p1276fejsn99bbe640a15c"
+    'x-rapidapi-host': host,
+    'x-rapidapi-key': apikey
     }
 
+print(headers)
 conn.request("GET", "/apiservices/reference/v1.0/currencies", headers=headers)
 res = conn.getresponse()
 data = res.read()

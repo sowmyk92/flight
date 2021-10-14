@@ -16,7 +16,7 @@ def connect_db(host,database,user,password):
 
 def create_connection():
     ''' To check the database connection  '''    
-    with open("cred.txt","r") as f:
+    with open("dbcred.txt","r") as f:
         param =f.readline()
 
     par = json.loads(param)

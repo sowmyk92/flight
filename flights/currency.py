@@ -5,26 +5,12 @@ import pandas as pd
 import sql
 import psycopg2
 from dataload import create_connection,load_data,trunc_table
+from apiheaders import api_headers
 
 ## Connect to the API to fetch data
 conn = http.client.HTTPSConnection("skyscanner-skyscanner-flight-search-v1.p.rapidapi.com")
+headers = api_headers()
 
-with open("apicred.txt",'r') as f:
-    apicred = f.readlines()
-
-    for line in apicred:
-        val=line.replace("\n","").split("=")
-        if 'host' in val :
-            host = val[1]
-        if 'apikey' in val:
-            apikey=val[1]
-
-headers = {
-    'x-rapidapi-host': host,
-    'x-rapidapi-key': apikey
-    }
-
-print(headers)
 conn.request("GET", "/apiservices/reference/v1.0/currencies", headers=headers)
 res = conn.getresponse()
 data = res.read()

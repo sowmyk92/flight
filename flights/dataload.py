@@ -39,10 +39,12 @@ def load_data(con,df,table_name,page_size):
 
     ##Colum names in order of the data for the insert query
     cols = ','.join(list(df.columns))
-    #print(cols)
+    print(cols)
 
+    col1 =["%s" for x in df.columns]
+    val = ','.join(col1)
     ##Construct the insert statement 
-    query= "Insert into %s(%s) values(%%s,%%s,%%s,%%s,%%s,%%s,%%s,%%s) " %(table_name, cols)
+    query= "Insert into %s(%s) values(%s) " %(table_name, cols,val)
     print(query)
 
     cursor = con.cursor()

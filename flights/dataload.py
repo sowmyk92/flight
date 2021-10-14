@@ -3,11 +3,6 @@ import psycopg2
 import json
 import psycopg2.extras as extras
 
-host      = "localhost"
-database  = "flight"
-user      = "postgres"
-password  = "sowmya"
-
 #conn = psycopg2.connect(**conn_dic)
 
 def connect_db(host,database,user,password):
@@ -20,6 +15,7 @@ def connect_db(host,database,user,password):
     return con
 
 def create_connection():
+    ''' To check the database connection  '''    
     with open("cred.txt","r") as f:
         param =f.readline()
 
@@ -34,6 +30,7 @@ def create_connection():
     return con
 
 def load_data(con,df,table_name,page_size):
+    ''' Function to load the dataframe to given table   '''    
     page_size= page_size
 
     ##Values for the insert command
@@ -63,7 +60,7 @@ def load_data(con,df,table_name,page_size):
     cursor.close()
 
 def trunc_table(con,table_name):
-    
+    ''' Function to truncate the data of the given table   '''    
     query = "truncate table %s" %(table_name)
     print(query)
     cursor = con.cursor()

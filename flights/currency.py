@@ -36,4 +36,3 @@ else :
     trunc_table(con,table_name)
     load_data(con,df,table_name,page_size)
 
-#print("Con value: {}".format(con))

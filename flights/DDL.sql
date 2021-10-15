@@ -18,7 +18,9 @@ DROP TABLE COUNTRY;
 CREATE TABLE COUNTRY
 (
 	COUNTRY_CODE VARCHAR(10),
-	COUNTRY_NAME VARCHAR(100)
+	COUNTRY_NAME VARCHAR(100),
+	CURRENCY_CODE CHAR(3)
 );
+
 
 ##########################################################################################

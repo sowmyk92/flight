@@ -33,3 +33,25 @@ CREATE TABLE AIRPORT
 	TIMEZONE TEXT
 );
 ####################################################################################################################################################################################
+--QUOTES TABLE 
+DROP table QUOTES;
+create table QUOTES
+(
+	quote_id  int,
+	quote_datetime timestamp,
+	departure_date timestamp,
+	origin_city varchar(100),
+	origin_id int,
+	origin_airport_code varchar(100),
+	origin_country varchar(100),
+	dest_city varchar(100),
+	destination_id int,
+	dest_airpot_code varchar(100),
+	dest_country varchar(100),
+	min_price decimal(28),
+	currency_code char(3),
+	is_direct boolean,
+	carrier_id int,
+	carrier_name varchar(100)
+);
+####################################################################################################################################################################################

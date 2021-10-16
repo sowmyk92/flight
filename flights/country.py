@@ -17,7 +17,10 @@ df = pd.json_normalize(data)
 df = df[['code','name','currency']]
 df.columns = ['country_code','country_name','currency_code']
 df['country_name'] = df['country_name'].str.upper()
+df['currency_code'] = df['currency_code'].replace('','NA')
+#df['currency_code'] = df['currency_code'].str.startswith(' ')
 #print(df.info())
+
 
 table_name="COUNTRY"
 page_size =300

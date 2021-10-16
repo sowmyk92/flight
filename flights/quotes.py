@@ -14,7 +14,7 @@ query="select a.country_code as in_code, a.airport_code as in_airport, b.country
 in_nl_df = pd.read_sql_query(query, con=con)
 #print(in_nl_df.head())
 #in_nl_df = in_nl_df[in_nl_df['in_airport'] == "MAA"]
-in_intl_air = ['MAA','DEL','HYD']#,'BLR','BOM','CCU']
+in_intl_air = ['MAA','DEL','BOM']#,'BLR','HYD','CCU']
 in_nl_df=in_nl_df[in_nl_df['in_airport'].isin(in_intl_air)]
 
 

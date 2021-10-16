@@ -19,3 +19,7 @@
 5. airport.py --> contains airport code, city, country_code, latitude, longitude and timezone for each airports
 
 ![image](https://user-images.githubusercontent.com/67071872/137535719-ad69fed4-aa34-4469-ae5a-22605e742d95.png)
+
+6. quotes.py --> contains a quote price and datetime for each flight between two locations
+
+![image](https://user-images.githubusercontent.com/67071872/137578079-92461d9f-2cf8-4a11-85f2-02006aac2cf4.png)

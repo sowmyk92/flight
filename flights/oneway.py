@@ -25,8 +25,8 @@ nl_airport=set(list(in_nl_df['nl_airport']))
 conn = http.client.HTTPSConnection("skyscanner-skyscanner-flight-search-v1.p.rapidapi.com")
 headers = api_headers()
 
-table_name="quotes"
-page_size =1000
+table_name="oneway_quotes"
+page_size =100
 
 con = create_connection()
 trunc_table(con,table_name)

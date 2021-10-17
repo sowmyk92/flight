@@ -14,8 +14,8 @@ query="select a.country_code as in_code, a.airport_code as in_airport, b.country
 
 in_nl_df = pd.read_sql_query(query, con=con)
 
-in_intl_air = ['MAA']#,'DEL','BOM']#,'BLR','HYD','CCU']
-in_nl_df=in_nl_df[in_nl_df['in_airport'].isin(in_intl_air)].head(5)
+in_intl_air = ['MAA','DEL','BOM']#,'BLR','HYD','CCU']
+in_nl_df=in_nl_df[in_nl_df['in_airport'].isin(in_intl_air)]
 
 
 in_airport=set(list(in_nl_df['in_airport']))

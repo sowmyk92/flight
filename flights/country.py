@@ -4,6 +4,7 @@ import json
 import urllib.request as request
 from dataload import create_connection,load_data,trunc_table
 
+## Connection details for the countries data:
 url = "http://api.travelpayouts.com/data/en/countries.json"
 
 with request.urlopen(url) as response:
@@ -13,15 +14,15 @@ with request.urlopen(url) as response:
     else:
         print("Error when retrieving data")
 
+## Convert data to pandas dataframe
 df = pd.json_normalize(data)
 df = df[['code','name','currency']]
 df.columns = ['country_code','country_name','currency_code']
 df['country_name'] = df['country_name'].str.upper()
 df['currency_code'] = df['currency_code'].replace('','NA')
-#df['currency_code'] = df['currency_code'].str.startswith(' ')
-#print(df.info())
 
 
+## Create DB Connection and load the data 
 table_name="COUNTRY"
 page_size =300
 

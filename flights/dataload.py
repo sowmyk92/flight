@@ -3,7 +3,6 @@ import psycopg2
 import json
 import psycopg2.extras as extras
 
-#conn = psycopg2.connect(**conn_dic)
 
 def connect_db(host,database,user,password):
     try:
